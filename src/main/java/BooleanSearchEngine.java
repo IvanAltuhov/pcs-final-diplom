@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 
-public class BooleanSearchEngine extends SearchEngine {
-    protected static Map<String, List<PageEntry>> wordIndexingStorage;
+public class BooleanSearchEngine implements SearchEngine {
+    protected Map<String, List<PageEntry>> wordIndexingStorage;
 
     //TODO обработать исключение в Main
     public BooleanSearchEngine() throws IOException {
@@ -50,7 +50,7 @@ public class BooleanSearchEngine extends SearchEngine {
         }
     }
 
-   /* @Override
+    @Override
     public List<PageEntry> search(String word) {
         String wordToLowReg = word.toLowerCase();
         List<PageEntry> pageEntries = wordIndexingStorage.getOrDefault(wordToLowReg, Collections.emptyList());
@@ -58,6 +58,4 @@ public class BooleanSearchEngine extends SearchEngine {
         Collections.sort(pageEntries);
         return pageEntries;
     }
-
-    */
 }
