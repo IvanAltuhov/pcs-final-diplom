@@ -41,12 +41,13 @@ public class BooleanSearchEngine implements SearchEngine {
                     List<PageEntry> listPageTmp = new ArrayList<>();
                     listPageTmp.add(new PageEntry(namePDFFile, j + 1, tmpValue));
                     List<PageEntry> pageEntries = wordIndexingStorage.getOrDefault(tmpWord, Collections.emptyList());
-                    Collections.sort(pageEntries);
+
 
                     if (wordIndexingStorage.containsKey(tmpWord))  {
                         wordIndexingStorage.get(tmpWord).add(new PageEntry(namePDFFile, j + 1 , tmpValue));
                     } else
                         wordIndexingStorage.put(tmpWord, listPageTmp);
+                    Collections.sort(pageEntries);
                 }
             }
         }
